@@ -35,11 +35,11 @@
   
 
 .nav-sidebar {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 0px;
-    height: calc(100vh - 50px);
+    height: calc(100% - 50px);
     background-color: rgb(165, 15, 15);
     z-index: 1000;
     transition: all 0.3s ease-in-out;
