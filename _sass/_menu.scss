@@ -12,10 +12,10 @@
 }
   
 .hamburguer{
-    font-size:40px;
+    font-size:35px;
     cursor:pointer;
     color:rgb(165, 15, 15);
-    margin-top: -10px;
+    margin: 5px;
     margin-left: 10px;
 }
   
@@ -54,7 +54,7 @@
         font-size: calc(20px);
         color: white;
         font-weight: 800;
-        margin-top: 30px;
+        margin-top: 50px;
 
     }
 
@@ -92,13 +92,13 @@
 
   
 .closebtn{
-    font-size:50px;
+    font-size:35px;
     cursor:pointer;
     color: white;
     text-decoration: none;
     position: absolute;
-    top: 0;
-    right: 0px;
+    top: 5px;
+    right: 5px;
     margin-left: 90px;
     &:hover {
         color: rgb(244, 215, 215);
