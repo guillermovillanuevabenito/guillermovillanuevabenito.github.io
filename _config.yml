@@ -1,0 +1,28 @@
+# Site settings
+title: Guillermo Villanueva 
+description: Personal Website
+author: Guillermo
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title
+
+# Navigation menu
+links:
+  - title: About
+    url: /index.html
+  - title: Projects
+    url: /project.html
+  - title: CV
+    url: /assets/CV_guillermo_villanueva.pdf
+
+# Social-icons
+social:
+- {icon: 'github',     link: 'https://www.github.com/guillermovillanuevabenito'}
+- {icon: 'linkedin',   link: 'https://www.linkedin.com/in/guillermo-villanueva-130691234/'}
+- {icon: 'envelope',   link: 'mailto:guillermovillanuevabenito@gmail.com'}
+
+sharing_button_prompt: 'Feel free to share!'
+
+post_date_prefix: 'Written on'

@@ -1,0 +1,16 @@
+<nav class="nav-main">
+    <div class="hamburguer">&#9776;</div>
+    <div class= "title"><a>Guillermo Villanueva</a></div>
+</nav>
+  
+<div class="nav-sidebar">
+    <a class="closebtn">&times;</a>
+
+    <h2 class="sidebar-section">MENU</h2>
+
+    {% for link in site.links %}
+        <li><a href="{{ site.url }}{{site.baseurl}}{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+</div>
+  
+  
