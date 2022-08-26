@@ -4,7 +4,7 @@ title: "Artificial Neural Network for diabetes prediction"
 author: "Guillermo Villanueva"
 categories: journal
 tags: [documentation,sample]
-image: diabetes.webp
+image: diabetes.jpeg
 tags:
 - Artificial Neural Network
 - Python
