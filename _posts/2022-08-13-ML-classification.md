@@ -6,6 +6,7 @@ categories: journal
 tags: [documentation,sample]
 image: traffic_jam2.jpeg
 tags:
+- Machine Learning
 - SVM
 - Random Forest
 - Python
