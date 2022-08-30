@@ -37,7 +37,7 @@ ANN uses an activation functions to transform the sum of weighted inputs given a
 
 ## Data
 
-We will use the publicly available "[Pima Indians Diabetes dataset](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)". It describes patient medical record data for 768 women patients and whether they had an onset of diabetes within five years. It is binary classification problem and all the input variables that describe each patient are numerical. The variables can be summarized as follows:
+We will use the publicly available <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">"Pima Indians Diabetes dataset"</a>. It describes patient medical record data for 768 women patients and whether they had an onset of diabetes within five years. It is binary classification problem and all the input variables that describe each patient are numerical. The variables can be summarized as follows:
 
 1. _pregnant_: number of times pregnant.
 2. _glucose_: plasma glucose concentration a two hours in an oral glucose tolerance test.
