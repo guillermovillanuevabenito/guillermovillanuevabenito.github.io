@@ -14,19 +14,19 @@ tags:
 Diabetes is a chronic health condition that affects a huge number of the population throughout the world.
 
 
-<div class="highlight-RST"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
-<div class="highlights"> 
+<div class="highlight-note"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
+<div class="highlights-note"> 
 <p>Diabetes is a health disorder that results in an increase in blood glucose level.</p>
 </div>
 
 In this project, we will implement an Artificial Neural Network (ANN) for diabetes predictions in order to predict the onset of diabetes based on a set of diagnostic measures.
 
 ## Model
-Among the different machine learning (ML) models used for diabetes predictions such as support vector machines (SVM), decision trees (DT) or random forest (RF), we will focus on artificial neural networks (ANN).
+Among the different machine learning (ML) models used for diabetes predictions such as support vector machines (SVM), decision trees (DT) or random forest (RF), we will focus on artificial neural networks (ANN). The beginning of ANN is often attributed to the research article by <a href="https://link.springer.com/article/10.1007/BF02478259" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">McCullocht</a>.
 
 
-<div class="highlight-RST"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
-<div class="highlights"> 
+<div class="highlight-note"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
+<div class="highlights-note"> 
 <p>An artificial neural network is a model inspired by the structure of neural networks in the brain.</p>
 </div>
 
@@ -50,14 +50,14 @@ We will use the publicly available <a href="https://www.kaggle.com/datasets/ucim
 9. _diabetes_: class variable (0 or 1).
 
 ## Implementation
-We will implement the following architecture:
+The following network architecture will be implemented:
 
 1. Input layer.
 2. Layer dense with 20 nodes.
 3. Layer dense with 10 nodes.
 4. Output layer.
 
-We will use the python API Keras which is built on top of TensorFlow in order to implement the above architecture.
+In order to implement it, we will use the python API Keras which is built on top of TensorFlow.
 
 ```python
 model_1 = tf.keras.models.Sequential()
@@ -76,7 +76,7 @@ history = model_1.fit(X_train, y_train, epochs=50,batch_size = 5,validation_spli
 
 ## Results
 
-When evaluating our ANN we have obtained an accuracy of $0.71$.
+When evaluating our ANN we have obtained an accuracy of 0.71.
 
 ```python
 y_pred = model_1.predict(X_test)
@@ -88,4 +88,6 @@ We also show the training and test accuracy and loss during the training phase.
 
 ## Conclusion
 
-We notice that the final model accuracy obtained is not the best one and that the model could be improved. However, for the purpose of this post it is good enough.
+We notice that the final model accuracy could be improved. A quickly internet inspection shows that higher accuracies have been obtained. 
+
+In a future work, we will dig deeper into the network architecture and hyperparameters, and also test different approaches.

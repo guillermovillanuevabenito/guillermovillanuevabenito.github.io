@@ -81,25 +81,66 @@ img {
   Highlightes boxes
 */
 
-.highlights {
+.highlights-note {
     background-color: #e7f2fa;
     padding: 12px;
 }
 
-.highlights>p {
+.highlights-note>p {
     margin: 0px;
     display: flex;
 }
 
-.highlight-RST {
+.highlight-note {
     background-color: #6ab0de;
     padding: 6px;
     color: #fff;
 }
 
-.highlight-RST>span{
+.highlight-note>span{
     margin-left: 8px;
 }
+
+.highlights-warning {
+    background-color: #ffedcc;
+    padding: 12px;
+}
+
+.highlights-warning>p {
+    margin: 0px;
+    display: flex;
+}
+
+.highlight-warning {
+    background-color: #f0b37e;
+    padding: 6px;
+    color: #fff;
+}
+
+.highlight-warning>span{
+    margin-left: 8px;
+}
+
+.highlights-add {
+    background-color: #e2f8d3;
+    padding: 12px;
+}
+
+.highlights-add>p {
+    margin: 0px;
+    display: flex;
+}
+
+.highlight-add {
+    background-color: #83c43d;
+    padding: 6px;
+    color: #fff;
+}
+
+.highlight-add>span{
+    margin-left: 8px;
+}
+
 
 /*
 Tags
