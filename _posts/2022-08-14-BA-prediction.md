@@ -31,4 +31,4 @@ The major result, in terms of prediction, is summarized in the following sentenc
 
 _"Given an accident with victims, if we know the type of road and the time when it took place, the proposed simplified Bayesian model is able to predict, with probability 2/3, whether or not there was at least one death."_
 
-You can download the project [here]({{ site.url }}/assets/BA_project.pdf).
+You can download the project [here]({{ site.url }}/assets/BA_project.pdf). The source code will be soon available on GitHub.

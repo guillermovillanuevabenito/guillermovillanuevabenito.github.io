@@ -22,32 +22,29 @@ Diabetes is a chronic health condition that affects a huge number of the populat
 In this project, we will implement an Artificial Neural Network (ANN) for diabetes predictions in order to predict the onset of diabetes based on a set of diagnostic measures.
 
 ## Model
-Among the different machine learning (ML) models used for diabetes predictions such as support vector machines (SVM), decision trees (DT) or random forest (RF), we will focus on artificial neural networks (ANN). The beginning of ANN is often attributed to the research article by <a href="https://link.springer.com/article/10.1007/BF02478259" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">McCullocht</a>.
-
+Among the different machine learning (ML) models used for diabetes predictions such as support vector machines (SVM), decision trees (DT) or random forest (RF), we will focus on artificial neural networks (ANN). 
 
 <div class="highlight-note"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
 <div class="highlights-note"> 
 <p>An artificial neural network is a model inspired by the structure of neural networks in the brain.</p>
 </div>
 
-ANN consist of a large number of basic units called neurons that are connected to each other. A neural network can be described as a directed graph whose nodes correspond to neurons and edges to links between them. Each neuron receives as inputs a weighted sum of the outputs of the neurons connected to its incomming edges.
-
-ANN uses an activation functions to transform the sum of weighted inputs given at a node into activation of that node.
+ANN consist of a large number of basic units called neurons that are connected to each other. A neural network can be described as a directed graph whose nodes correspond to neurons and edges to links between them. Each neuron receives as inputs a weighted sum of the outputs of the neurons connected to its incomming edges. ANN uses an activation functions to transform the sum of weighted inputs given at a node into activation of that node.
 
 
 ## Data
 
-We will use the publicly available <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">"Pima Indians Diabetes dataset"</a>. It describes patient medical record data for 768 women patients and whether they had an onset of diabetes within five years. It is binary classification problem and all the input variables that describe each patient are numerical. The variables can be summarized as follows:
+We will use the publicly available <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">Pima Indians Diabetes dataset</a>. It describes patient medical record data for 768 women patients and whether they had an onset of diabetes within five years. It is binary classification problem and all the input variables that describe each patient are numerical. The variables can be summarized as follows:
 
-1. _pregnant_: number of times pregnant.
-2. _glucose_: plasma glucose concentration a two hours in an oral glucose tolerance test.
-3. _pressure_: diastolic blood pressure.
-4. _triceps_: Triceps skin fold thickness
-5. _insulin_: 2-h serum insulin.
-6. _mass_: body mass index.
-7. _pedigree_: diabetes pedigree function.
-8. _age_: age
-9. _diabetes_: class variable (0 or 1).
+1. _Pregnant_: number of times pregnant.
+2. _Glucose_: plasma glucose concentration a two hours in an oral glucose tolerance test.
+3. _Pressure_: diastolic blood pressure.
+4. _Triceps_: Triceps skin fold thickness
+5. _Insulin_: 2-h serum insulin.
+6. _Mass_: body mass index.
+7. _Pedigree_: diabetes pedigree function.
+8. _Age_: age
+9. _Diabetes_: class variable (0 or 1).
 
 ## Implementation
 The following network architecture will be implemented:
@@ -57,7 +54,7 @@ The following network architecture will be implemented:
 3. Layer dense with 10 nodes.
 4. Output layer.
 
-In order to implement it, we will use the python API Keras which is built on top of TensorFlow.
+In order to implement it, we will use the python API <a href="https://keras.io/" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">Keras</a>, built on top of TensorFlow. Below, there is an instance of the source code implementing an ANN. Note that the code can be found in <a href="https://github.com/guillermovillanuevabenito/ANN_diabetes" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">GitHub-ANN-diabetes</a>.
 
 ```python
 model_1 = tf.keras.models.Sequential()
@@ -86,7 +83,7 @@ We also show the training and test accuracy and loss during the training phase.
 
 ![Training errors](/assets/img/Figure_1.png)
 
-## Conclusion
+## To be continued...
 
 We notice that the final model accuracy could be improved. A quickly internet inspection shows that higher accuracies have been obtained. 
 
