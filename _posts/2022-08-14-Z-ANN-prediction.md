@@ -59,7 +59,7 @@ In order to implement it, we will use the python API <a href="https://keras.io/"
 ## Data Pre-Processing
 We firtly removed instances with missing values. They correspond to patients with glucose, blood pressure, skin thickness, insulin or BMI set to zero.
 
-<div style="padding-bottom:110%; position:relative; display:block; width: 100%; height: 100%">
+<div style="padding-bottom:110%; position:relative; display:block; width: 100%; height: 100%; z-index:10">
   <iframe width="100%" height="100%"
     src = "/assets/plot3.html"
     frameborder="0" style="position:absolute; top:0; left: 0">
