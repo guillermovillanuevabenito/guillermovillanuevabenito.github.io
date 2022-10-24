@@ -22,7 +22,7 @@ Diabetes is a chronic health condition that affects a huge number of the populat
 In this project, we will implement an Artificial Neural Network (ANN) for diabetes predictions in order to predict the onset of diabetes based on a set of diagnostic measures.
 
 ## Model
-Among the different machine learning (ML) models used for diabetes predictions such as support vector machines (SVM), decision trees (DT) or random forest (RF), we will focus on artificial neural networks (ANN). 
+Among the different machine learning (ML) models used for diabetes prediction such as support vector machines (SVM), decision trees (DT) or random forest (RF), we will focus on artificial neural networks (ANN). 
 
 <div class="highlight-note"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
 <div class="highlights-note"> 
@@ -54,7 +54,19 @@ The following network architecture will be implemented:
 3. Layer dense with 10 nodes.
 4. Output layer.
 
-In order to implement it, we will use the python API <a href="https://keras.io/" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">Keras</a>, built on top of TensorFlow. Below, there is an instance of the source code implementing an ANN. Note that the code can be found in <a href="https://github.com/guillermovillanuevabenito/ANN_diabetes" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">GitHub-ANN-diabetes</a>.
+In order to implement it, we will use the python API <a href="https://keras.io/" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">Keras</a>, built on top of TensorFlow. The source code can be found in <a href="https://github.com/guillermovillanuevabenito/ANN_diabetes" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">GitHub-ANN-diabetes</a>.
+
+## Data Pre-Processing
+We firtly removed instances with missing values. They correspond to patients with glucose, blood pressure, skin thickness, insulin or BMI set to zero.
+
+<div style="padding-bottom:110%; position:relative; display:block; width: 100%; height: 100%">
+  <iframe width="100%" height="100%"
+    src = "/assets/plot3.html"
+    frameborder="0" style="position:absolute; top:0; left: 0">
+  </iframe>
+</div>
+
+## Results
 
 ```python
 model_1 = tf.keras.models.Sequential()
@@ -88,3 +100,4 @@ We also show the training and test accuracy and loss during the training phase.
 We notice that the final model accuracy could be improved. A quickly internet inspection shows that higher accuracies have been obtained. 
 
 In a future work, we will dig deeper into the network architecture and hyperparameters, and also test different approaches.
+
