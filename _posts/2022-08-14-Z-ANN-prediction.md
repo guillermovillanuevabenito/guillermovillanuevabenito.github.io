@@ -87,10 +87,11 @@ history = model_1.fit(X_train, y_train, epochs=50,batch_size = 5,validation_spli
 
 When evaluating our ANN we have obtained an accuracy of 0.71.
 
-```python
+{% highlight python %}
 y_pred = model_1.predict(X_test)
 test_loss, test_acc = model_1.evaluate(X_test, y_test)
-```
+{% endhighlight %}
+
 
 We also show the training and test accuracy and loss during the training phase.
 
