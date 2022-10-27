@@ -30,3 +30,20 @@ Traffic accidents can be classified in 4 classes according to its impact on traf
 The goal is to predict the degree of impact of an accident given the value of a set of explanatory variables and study the performance of the predictors.
 
 You can download the project [here]({{ site.url }}/assets/ML_project.pdf) and find the source code in <a href="https://github.com/guillermovillanuevabenito/ML_class" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">GitHub-classification</a>. 
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="guillermovillanuevabenito/guillermovillanuevabenito.github.io"
+        data-repo-id="R_kgDOH4qYSg"
+        data-category="General"
+        data-category-id="DIC_kwDOH4qYSs4CSOxo"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>

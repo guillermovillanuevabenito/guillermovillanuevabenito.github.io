@@ -84,8 +84,6 @@ model_1.compile(
 history = model_1.fit(X_train, y_train, epochs=50,batch_size = 5,validation_split = 0.2)
 ```
 
-## Results
-
 When evaluating our ANN we have obtained an accuracy of 0.71.
 
 ```python
