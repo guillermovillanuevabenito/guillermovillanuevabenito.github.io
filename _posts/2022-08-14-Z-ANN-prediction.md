@@ -69,6 +69,7 @@ We firtly removed instances with missing values. They correspond to patients wit
 ## Results
 
 ```python
+import numpy as np
 model_1 = tf.keras.models.Sequential()
 model_1.add(tf.keras.layers.Dense(units=20, activation='relu',input_shape = [8]))
 model_1.add(tf.keras.layers.Dense(units=10, activation='relu'))
@@ -87,10 +88,10 @@ history = model_1.fit(X_train, y_train, epochs=50,batch_size = 5,validation_spli
 
 When evaluating our ANN we have obtained an accuracy of 0.71.
 
-{% highlight python %}
+```python
 y_pred = model_1.predict(X_test)
 test_loss, test_acc = model_1.evaluate(X_test, y_test)
-{% endhighlight %}
+```
 
 
 We also show the training and test accuracy and loss during the training phase.
