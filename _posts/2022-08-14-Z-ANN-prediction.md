@@ -104,3 +104,18 @@ We notice that the final model accuracy could be improved. A quickly internet in
 
 In a future work, we will dig deeper into the network architecture and hyperparameters, and also test different approaches.
 
+<script src="https://giscus.app/client.js"
+        data-repo="guillermovillanuevabenito/guillermovillanuevabenito.github.io"
+        data-repo-id="R_kgDOH4qYSg"
+        data-category="General"
+        data-category-id="DIC_kwDOH4qYSs4CSOxo"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
