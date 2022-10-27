@@ -4,8 +4,11 @@ description: Personal Website
 author: Guillermo
 
 # Build settings
-markdown: kramdown 
-highlighter: rouge
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 
 permalink: /:title
