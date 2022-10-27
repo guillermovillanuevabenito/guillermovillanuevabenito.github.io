@@ -4,12 +4,15 @@ description: Personal Website
 author: Guillermo
 
 # Build settings
-markdown: kramdown
+markdown: kramdown 
 highlighter: rouge
-permalink: /:title
 
+
+permalink: /:title
+  
 plugins:
   - jekyll-feed
+
 # Navigation menu
 links:
   - title: About
