@@ -196,3 +196,36 @@
 .highlight .o {
   color: #f92672;
 }
+
+code,
+pre {
+    font-family: "Source Code Pro", monospace;
+}
+code {
+padding: .25em .5em;
+    font-size: .8rem;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: .8rem;
+    line-height: 1.4;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+pre code {
+    padding: 0;
+    font-size: 100%;
+    color: inherit;
+    background-color: transparent;
+}
+
+pre.highlight {
+    white-space: pre;
+    overflow-x: auto;
+}
