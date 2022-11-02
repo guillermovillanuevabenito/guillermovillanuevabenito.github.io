@@ -164,3 +164,30 @@ Tags
 }
 
 
+.pagination a, .pagination span {
+    padding: 7px 18px;
+    border: 1px solid #eee;
+    margin-left: -2px;
+    margin-right: -2px;
+    background-color: #ffffff;
+    display: inline-block;
+    color: rgb(165, 15, 15);
+  }
+
+.pagination .webjeda {
+    background-color: rgb(165, 15, 15);
+    color: white;
+} 
+
+
+.pagination a {    
+    &:hover {
+        background-color: rgb(165, 15, 15);
+        opacity: 0.5;
+        color:white;
+    }
+ }
+
+.pagination {
+    text-align: center;
+ }

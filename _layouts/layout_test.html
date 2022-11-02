@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <body>
+        {% include menu.html %}
+        <div class="container"> 
+            <a href="{{ site.url }}{{site.baseurl}}/assets/CV_guillermo_villanueva.pdf" class = "download-pdf">PDF
+                <div><span class = "fa fa-file-pdf-o"> </span></div>
+            </a>
+            {{ content }}
+        </section>
+        {% include footer.html %}
+    </body>
+</html>

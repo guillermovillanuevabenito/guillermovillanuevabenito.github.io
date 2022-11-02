@@ -229,3 +229,15 @@ pre.highlight {
     white-space: pre;
     overflow-x: auto;
 }
+
+p a {
+  color: rgb(165, 15, 15);
+  text-decoration: none;
+}
+
+p a:hover {color: rgb(0, 0, 0); }
+
+blockquote {
+  padding: 0 1em;
+  border-left: 0.25em solid #444c56;
+}

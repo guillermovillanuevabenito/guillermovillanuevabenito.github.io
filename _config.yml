@@ -15,13 +15,14 @@ permalink: /:title
   
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Navigation menu
 links:
   - title: About
     url: /index.html
   - title: Projects
-    url: /project.html
+    url: /articles/index.html
   - title: CV
     url: /assets/CV_guillermo_villanueva.pdf
 
@@ -35,7 +36,8 @@ sharing_button_prompt: 'Feel free to share!'
 
 post_date_prefix: 'Written on'
 
-
+paginate: 4;
+paginate_path: "/articles/index/page:num/"
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
