@@ -16,6 +16,7 @@ permalink: /:title
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-seo-tag
 
 # Navigation menu
 links:
