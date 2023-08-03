@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Hi!
+title: Guillermo Villanueva Benito
 ---
 
 I'm Guillermo Villanueva Benito, a mathematics and engineering physics graduate from the Interdisciplinary Higher Education Center (CFIS) at the Universitat Politècnica de Catalunya (UPC). Currently, I'm a master’s student from the Master’s degree in Advanced Mathematics and Mathematical Engineering (MAMME) at UPC.
