@@ -1,9 +1,15 @@
 ---
+layout: archive
 title: "CV"
 permalink: /cv/
+author_profile: true
+redirect_from:
+  - /resume
 ---
 
-[<i class="fas fa-file-pdf"></i> Download CV (PDF)](/assets/CV_guillermo_villanueva.pdf){: .btn .btn--primary}
+{% include base_path %}
+
+[Download CV (PDF)](/files/CV_guillermo_villanueva.pdf)
 
 ## Education
 

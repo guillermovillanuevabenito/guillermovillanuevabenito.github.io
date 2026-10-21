@@ -1,25 +1,38 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@charset "utf-8";
+/*
+ * This file controls what is imported from /_sass
+ *
+ * Note that the files are processed in the order they are imported, so they are partly
+   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ */
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
-@import "minimal-mistakes";
+@import
+    "vendor/breakpoint/breakpoint",
 
-/* Site tweaks */
-.sidebar {
-  opacity: 1 !important; // theme fades the sidebar to 0.75 until hover
-  font-size: 18px; // sidebar text a bit smaller than the page text (which scales up to 22px)
-}
+    "themes",
+    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
 
-.author__avatar img {
-  width: 100%;
-  max-width: none; // fill the sidebar (theme default: 175px)
-  padding: 0 !important; // no ring around the photo
-  border: none !important;
-}
+    "include/mixins",
+    "vendor/susy/susy",
 
-.greedy-nav .visible-links {
-  justify-content: flex-start; // menu on the left, right after the site title (theme default: right)
-}
+    "layout/reset",
+    "layout/base",
+
+    "include/utilities",
+    "layout/tables",
+    "layout/buttons",
+    "layout/notices",
+    "layout/masthead",
+    "layout/navigation",
+    "layout/footer",
+    "syntax",
+
+    "layout/forms",
+
+    "layout/page",
+    "layout/archive",
+    "layout/sidebar"
+;

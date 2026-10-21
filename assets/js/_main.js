@@ -1,230 +1,185 @@
 /* ==========================================================================
-   jQuery plugin settings and other scripts
+   Various functions that we want to use within the template
+   ========================================================================== */
+
+/*jslint es6 */
+'use strict';
+
+// Constants for CDNs
+const PLOTLY_URL = "https://cdn.jsdelivr.net/npm/plotly.js@3.6.0/dist/plotly.min.js";
+const MERMAID_URL = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+// Detect OS/browser preference
+const browserPref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Determine the computed theme, which can be "dark" or "light".
+function determineComputedTheme() {
+  // Determine the expected state of the theme toggle, which can be "dark", "light", or default "system"
+  let themeSetting = localStorage.getItem("theme");
+  themeSetting = (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") ? "system" : themeSetting;
+
+  // Return the setting if set, or use the browser preference
+  if (themeSetting != "system") {
+    return themeSetting;
+  }
+  return browserPref ? "dark" : "light";
+}
+
+// Set the theme on page load or when explicitly called. Without an argument the
+// theme is the stored preference or, failing that, the OS/browser preference.
+function setTheme(theme) {
+  const use_theme = theme || determineComputedTheme();
+
+  if (use_theme === "dark") {
+    $("html").attr("data-theme", "dark");
+    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+  } else if (use_theme === "light") {
+    $("html").removeAttr("data-theme");
+    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+  }
+}
+
+// Toggle the theme manually
+function toggleTheme() {
+  const current_theme = $("html").attr("data-theme");
+  const new_theme = current_theme === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", new_theme);
+  setTheme(new_theme);
+  redrawPlotly();
+}
+
+// Defer the loading of Mermaid to only if there is a field on the page to be rendered
+let mermaidElements = document.querySelectorAll("pre>code.language-mermaid");
+if (mermaidElements.length > 0) {
+  document.addEventListener("readystatechange", function() {
+    // Append the Mermaid module to the DOM
+    const moduleScript = document.createElement('script');
+    moduleScript.type = 'module';
+    moduleScript.textContent = `
+      import mermaid from '${MERMAID_URL}';
+      mermaid.initialize({startOnLoad:true, theme:'default'});
+      await mermaid.run({querySelector:'code.language-mermaid'});
+    `;
+    document.body.appendChild(moduleScript);
+  });
+}
+
+/* ==========================================================================
+   Plotly integration script so that Markdown codeblocks will be rendered
+   ========================================================================== */
+
+// Read the Plotly data from the code block, hide it, and render the chart as new node. This allows for the
+// JSON data to be retrieve when the theme is switched. The listener should only be added if the data is
+// actually present on the page.
+//
+// NOTE that plotlyDarkLayout and plotlyLightLayout will be exposed in the minimized file
+let plotlyElements = document.querySelectorAll("pre>code.language-plotly");
+if (plotlyElements.length > 0) {
+  document.addEventListener("readystatechange", function() {
+    // Return if not ready
+    if (document.readyState !== "complete") {
+      return;
+    }
+
+    // Prepare to load Plotly from the CDN
+    const script = document.createElement('script');
+    script.src = PLOTLY_URL;
+    script.async = true;
+
+    // Once loaded, update the page elements to work with it
+    script.onload = function() {
+      plotlyElements.forEach(function(elem) {
+        // Parse the Plotly JSON data and hide it
+        let jsonData = JSON.parse(elem.textContent);
+        elem.parentElement.classList.add("hidden");
+
+        // Add the Plotly node
+        let chartElement = document.createElement("div");
+        elem.parentElement.after(chartElement);
+
+        // Set the theme for the plot and render it
+        const theme = (determineComputedTheme() === "dark") ? plotlyDarkLayout : plotlyLightLayout;
+        if (jsonData.layout) {
+          jsonData.layout.template = (jsonData.layout.template) ? { ...theme, ...jsonData.layout.template } : theme;
+        } else {
+          jsonData.layout = { template: theme };
+        }
+        Plotly.react(chartElement, jsonData.data, jsonData.layout);
+      });
+    }
+
+    // Add the script to the document
+    document.head.appendChild(script);
+  });
+}
+
+function redrawPlotly() {
+  plotlyElements.forEach(function(elem) {
+    // Parse the Plotly JSON data
+    let jsonData = JSON.parse(elem.textContent);
+
+    // Get the Plotly node
+    let chartElement = $(elem).parent().next().get(0);
+
+    // Set the theme for the plot and render it
+    const theme = (determineComputedTheme() === "dark") ? plotlyDarkLayout : plotlyLightLayout;
+    if (jsonData.layout) {
+      jsonData.layout.template = (jsonData.layout.template) ? { ...theme, ...jsonData.layout.template } : theme;
+    } else {
+      jsonData.layout = { template: theme };
+    }
+    Plotly.react(chartElement, jsonData.data, jsonData.layout);
+  });
+}
+
+/* ==========================================================================
+   Actions that should occur when the page has been fully loaded
    ========================================================================== */
 
 $(document).ready(function () {
-  // FitVids init
-  $("#main").fitVids();
+  // SCSS SETTINGS - These should be the same as the settings in the relevant files
+  const scssLarge = 925;          // pixels, from /_sass/_themes.scss
+  const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
+
+  // If the user hasn't chosen a theme, follow the OS preference
+  setTheme();
+  window.matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener("change", (e) => {
+          if (!localStorage.getItem("theme")) {
+            setTheme(e.matches ? "dark" : "light");
+          }
+        });
+
+  // Enable the theme toggle
+  $('#theme-toggle').on('click', toggleTheme);
+
+  // Enable the sticky footer
+  var bumpIt = function () {
+    $("body").css("padding-bottom", "0");
+    $("body").css("margin-bottom", $(".page__footer").outerHeight(true));
+  }
+  $(window).resize(function () {
+    didResize = true;
+  });
+  setInterval(function () {
+    if (didResize) {
+      didResize = false;
+      bumpIt();
+    }}, 250);
+  var didResize = false;
+  bumpIt();
 
   // Follow menu drop down
   $(".author__urls-wrapper button").on("click", function () {
-    $(".author__urls").toggleClass("is--visible");
-    $(".author__urls-wrapper").find("button").toggleClass("open");
+    $(".author__urls").fadeToggle("fast", function () { });
+    $(".author__urls-wrapper button").toggleClass("open");
   });
 
-  // Close search screen with Esc key
-  $(document).keyup(function (e) {
-    if (e.keyCode === 27) {
-      if ($(".initial-content").hasClass("is--hidden")) {
-        $(".search-content").toggleClass("is--visible");
-        $(".initial-content").toggleClass("is--hidden");
-      }
+  // Restore the follow menu if toggled on a window resize
+  jQuery(window).on('resize', function () {
+    if ($('.author__urls.social-icons').css('display') == 'none' && $(window).width() >= scssLarge) {
+      $(".author__urls").css('display', 'block')
     }
   });
 
-  // Search toggle
-  $(".search__toggle").on("click", function () {
-    $(".search-content").toggleClass("is--visible");
-    $(".initial-content").toggleClass("is--hidden");
-    // set focus on input
-    setTimeout(function () {
-      $(".search-content input").focus();
-    }, 400);
-  });
-
-  // Smooth scrolling
-  var scroll = new SmoothScroll('a[href*="#"]', {
-    offset: 20,
-    speed: 400,
-    speedAsDuration: true,
-    durationMax: 500,
-  });
-
-  // Gumshoe scroll spy init
-  if ($("nav.toc").length > 0) {
-    var spy = new Gumshoe("nav.toc a", {
-      // Active classes
-      navClass: "active", // applied to the nav list item
-      contentClass: "active", // applied to the content
-
-      // Nested navigation
-      nested: false, // if true, add classes to parents of active link
-      nestedClass: "active", // applied to the parent items
-
-      // Offset & reflow
-      offset: 20, // how far from the top of the page to activate a content area
-      reflow: true, // if true, listen for reflows
-
-      // Event support
-      events: true, // if true, emit custom events
-    });
-  }
-
-  // Auto scroll sticky ToC with content
-  const scrollTocToContent = function (event) {
-    var target = event.target;
-    var scrollOptions = { behavior: "auto", block: "nearest", inline: "start" };
-
-    var tocElement = document.querySelector("aside.sidebar__right.sticky");
-    if (!tocElement) return;
-    if (window.getComputedStyle(tocElement).position !== "sticky") return;
-
-    if (target.parentElement.classList.contains("toc__menu") && target == target.parentElement.firstElementChild) {
-      // Scroll to top instead
-      document.querySelector("nav.toc header").scrollIntoView(scrollOptions);
-    } else {
-      target.scrollIntoView(scrollOptions);
-    }
-  };
-
-  // Has issues on Firefox, whitelist Chrome for now
-  if (!!window.chrome) {
-    document.addEventListener("gumshoeActivate", scrollTocToContent);
-  }
-
-  // add lightbox class to all image links
-  $(
-    "a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif'],a[href$='.webp']"
-  ).has("> img").addClass("image-popup");
-
-  // Magnific-Popup options
-  $(".image-popup").magnificPopup({
-    // disableOn: function() {
-    //   if( $(window).width() < 500 ) {
-    //     return false;
-    //   }
-    //   return true;
-    // },
-    type: "image",
-    tLoading: "Loading image #%curr%...",
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0, 1], // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      tError: '<a href="%url%">Image #%curr%</a> could not be loaded.',
-    },
-    removalDelay: 500, // Delay in milliseconds before popup is removed
-    // Class that is added to body when popup is open.
-    // make it unique to apply your CSS animations just to this exact popup
-    mainClass: "mfp-zoom-in",
-    callbacks: {
-      beforeOpen: function () {
-        // just a hack that adds mfp-anim class to markup
-        this.st.image.markup = this.st.image.markup.replace(
-          "mfp-figure",
-          "mfp-figure mfp-with-anim"
-        );
-      },
-    },
-    closeOnContentClick: true,
-    midClick: true, // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
-  });
-
-  // Add anchors for headings
-  document
-    .querySelector(".page__content")
-    .querySelectorAll("h1, h2, h3, h4, h5, h6")
-    .forEach(function (element) {
-      var id = element.getAttribute("id");
-      if (id) {
-        var anchor = document.createElement("a");
-        anchor.className = "header-link";
-        anchor.href = "#" + id;
-        anchor.innerHTML =
-          '<span class="sr-only">Permalink</span><i class="fas fa-link"></i>';
-        anchor.title = "Permalink";
-        element.appendChild(anchor);
-      }
-    });
-
-  // Add copy button for <pre> blocks
-  var copyText = function (text) {
-    if (document.queryCommandEnabled("copy") && navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(
-        () => true,
-        () => console.error("Failed to copy text to clipboard: " + text)
-      );
-      return true;
-    } else {
-      var isRTL = document.documentElement.getAttribute("dir") === "rtl";
-
-      var textarea = document.createElement("textarea");
-      textarea.className = "clipboard-helper";
-      textarea.style[isRTL ? "right" : "left"] = "-9999px";
-      // Move element to the same position vertically
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      textarea.style.top = yPosition + "px";
-
-      textarea.setAttribute("readonly", "");
-      textarea.value = text;
-      document.body.appendChild(textarea);
-
-      var success = true;
-      try {
-        textarea.select();
-        success = document.execCommand("copy");
-      } catch (e) {
-        success = false;
-      }
-      textarea.parentNode.removeChild(textarea);
-      return success;
-    }
-  };
-
-  var copyButtonEventListener = function (event) {
-    var thisButton = event.target;
-
-    // Locate the <code> element
-    var codeBlock = thisButton.nextElementSibling;
-    while (codeBlock && codeBlock.tagName.toLowerCase() !== "code") {
-      codeBlock = codeBlock.nextElementSibling;
-    }
-    if (!codeBlock) {
-      // No <code> found - wtf?
-      console.warn(thisButton);
-      throw new Error("No code block found for this button.");
-    }
-
-    // Skip line numbers if present (i.e. {% highlight lineno %})
-    var realCodeBlock = codeBlock.querySelector("td.code, td.rouge-code");
-    if (realCodeBlock) {
-      codeBlock = realCodeBlock;
-    }
-    var result = copyText(codeBlock.innerText);
-    // Restore the focus to the button
-    thisButton.focus();
-    if (result) {
-      if (thisButton.interval !== null) {
-        clearInterval(thisButton.interval);
-      }
-      thisButton.classList.add('copied');
-      thisButton.interval = setTimeout(function () {
-        thisButton.classList.remove('copied');
-        clearInterval(thisButton.interval);
-        thisButton.interval = null;
-      }, 1500);
-    }
-    return result;
-  };
-
-  if (window.enable_copy_code_button) {
-    document
-      .querySelectorAll(".page__content pre.highlight > code")
-      .forEach(function (element, index, parentList) {
-        // Locate the <pre> element
-        var container = element.parentElement;
-        // Sanity check - don't add an extra button if there's already one
-        if (container.firstElementChild.tagName.toLowerCase() !== "code") {
-          return;
-        }
-        var copyButton = document.createElement("button");
-        copyButton.title = "Copy to clipboard";
-        copyButton.className = "clipboard-copy-button";
-        copyButton.innerHTML = '<span class="sr-only">Copy code</span><i class="far fa-fw fa-copy"></i><i class="fas fa-fw fa-check copied"></i>';
-        copyButton.addEventListener("click", copyButtonEventListener);
-        container.prepend(copyButton);
-      });
-  }
 });
