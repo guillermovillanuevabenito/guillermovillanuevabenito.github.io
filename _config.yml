@@ -88,8 +88,6 @@ publication_category:
     title: 'Preprints'
   publications:
     title: 'Publications'
-  theses:
-    title: 'Theses'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
