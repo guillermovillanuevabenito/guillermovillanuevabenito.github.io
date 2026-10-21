@@ -13,7 +13,8 @@
 
     "themes",
     "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+    // light mode only: the dark theme is not loaded, so data-theme="dark" (set by the
+    // template's JS from the OS preference) has no effect
 
     "include/mixins",
     "vendor/susy/susy",
