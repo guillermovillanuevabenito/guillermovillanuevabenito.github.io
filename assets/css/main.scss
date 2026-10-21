@@ -8,8 +8,15 @@
 @import "minimal-mistakes";
 
 /* Site tweaks */
+.sidebar {
+  opacity: 1 !important; // theme fades the sidebar to 0.75 until hover
+}
+
 .author__avatar img {
-  max-width: 250px; // theme default: 175px
+  width: 100%;
+  max-width: none; // fill the sidebar (theme default: 175px)
+  padding: 0 !important; // no ring around the photo
+  border: none !important;
 }
 
 .greedy-nav .visible-links {
