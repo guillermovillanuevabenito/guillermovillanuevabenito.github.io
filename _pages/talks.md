@@ -16,6 +16,8 @@ author_profile: true
   *[CineScribe: LLM-Based Detection and Mitigation of Ambiguity in Cine Cardiac Magnetic Resonance Reports](https://www.thinkmind.org/library/AIHealth/AIHealth_2026/aihealth_2026_1_180_80154.html)*
 - **Women in Data Science (WiDS) Barcelona 2023**, Barcelona, Spain. Oct. 2023. Poster presentation.<br>
   *[Machine learning for anxiety and depression profiling in the aftermath of an emergency](https://sites.google.com/isglobal.org/women-in-data-science/english)*
+- **The 30th Annual Computational Neuroscience Meeting (CNS\*2021)**, Online. Jul. 2021. Poster presentation.<br>
+  *[Neuronal oscillations level sets for activity constancy: from single neurons to networks](https://pmc.ncbi.nlm.nih.gov/articles/PMC8687879/)*
 
 ## Contributions
 
