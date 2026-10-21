@@ -26,16 +26,15 @@ author:
   avatar           : "profile.png"
   name             : "Guillermo Villanueva Benito"
   pronouns         : # example: "she/her"  
-  bio              : "Applied mathematician and data scientist. Interested in data science, machine learning, operations research and optimization."
+  bio              : "PhD Student in Artificial Intelligence for Healthcare at the Barcelona Supercomputing Center (BSC-CNS) and the Barcelona Institute for Global Health (ISGlobal), working on vision-language models for AI-assisted diagnosis in cardiac MRI."
   location         : "Barcelona, Spain"
-  employer         : "Barcelona Institute for Global Health (ISGlobal)"
   uri              : # URL
   email            : "guillermovillanuevabenito@gmail.com" 
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : 
+  googlescholar    : "https://scholar.google.com/citations?user=24LyePoAAAAJ&hl=en"
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : 
@@ -52,6 +51,7 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "guillermovillanuevabenito"
+  huggingface      : "guillermovb" # Username
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
