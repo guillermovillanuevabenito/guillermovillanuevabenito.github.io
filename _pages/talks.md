@@ -10,6 +10,7 @@ author_profile: true
   Presenter Name (presenter), **Guillermo Villanueva Benito**. Conference Name, City, Country. Oral presentation.
 -->
 
+- MICCAI 2026, Strasbourg, France. Attendance.
 - *CineScribe: LLM-Based Detection and Mitigation of Ambiguity in Cine Cardiac Magnetic Resonance Reports*<br>
   **Guillermo Villanueva Benito** (presenter). AIHealth 2026, Valencia, Spain. Oral presentation, **Best Paper Award**.
 - *Automated regional wall motion abnormality detection in cine cardiac MRI using LLM-assisted annotation and video deep learning*<br>
