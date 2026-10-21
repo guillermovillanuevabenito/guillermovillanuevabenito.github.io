@@ -11,3 +11,7 @@
 .author__avatar img {
   max-width: 250px; // theme default: 175px
 }
+
+.greedy-nav .visible-links {
+  justify-content: flex-start; // menu on the left, right after the site title (theme default: right)
+}
