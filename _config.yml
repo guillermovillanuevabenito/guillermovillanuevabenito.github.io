@@ -1,44 +1,99 @@
+# Theme: Minimal Mistakes (https://mmistakes.github.io/minimal-mistakes/)
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 # Site settings
-title: Guillermo Villanueva Benito
-description: Personal Website
-author: Guillermo Villanueva Benito
+locale: "en-US"
+title: "Guillermo Villanueva Benito"
+name: "Guillermo Villanueva Benito"
+description: "Personal website of Guillermo Villanueva Benito: projects, CV and contact details."
+url: "https://guillermovillanuevabenito.com"
+baseurl: ""
+repository: "guillermovillanuevabenito/guillermovillanuevabenito.github.io"
+og_image: "/assets/img/me.png"
+search: true
 
-# Build settings
+# Site author
+author:
+  name: "Guillermo Villanueva Benito"
+  avatar: "/assets/img/me.png"
+  bio: "Applied mathematician and data scientist. Interested in data science, machine learning, operations research and optimization."
+  location: "Barcelona, Spain"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:guillermovillanuevabenito@gmail.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/guillermovillanuevabenito"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/guillermo-villanueva-130691234/"
+    - label: "CV (PDF)"
+      icon: "fas fa-fw fa-file-pdf"
+      url: "/assets/CV_guillermo_villanueva.pdf"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/guillermovillanuevabenito"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/guillermo-villanueva-130691234/"
+
+# Reading files
+include:
+  - _pages
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - "*.code-workspace"
+  - vendor
+
+# Conversion
 markdown: kramdown
-
+highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# Outputting
+permalink: /:title  # keeps the old post URLs (e.g. /TSP)
+timezone: Europe/Madrid
 
-permalink: /:title
-  
 plugins:
-  - jekyll-feed
+  - jekyll-remote-theme
   - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
   - jekyll-seo-tag
 
-# Navigation menu
-links:
-  - title: About
-    url: /index.html
-  - title: Projects
-    url: /articles/index.html
-  - title: CV
-    url: /assets/CV_guillermo_villanueva.pdf
+# Archives
+tag_archive:
+  type: liquid
+  path: /tags/
 
-# Social-icons
-social:
-- {icon: 'github',     link: 'https://www.github.com/guillermovillanuevabenito'}
-- {icon: 'linkedin',   link: 'https://www.linkedin.com/in/guillermo-villanueva-130691234/'}
-- {icon: 'envelope',   link: 'mailto:guillermovillanuevabenito@gmail.com'}
-
-sharing_button_prompt: 'Feel free to share!'
-
-post_date_prefix: 'Written on'
-
-paginate: 4;
-paginate_path: "/articles/index/page:num/"
-
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true

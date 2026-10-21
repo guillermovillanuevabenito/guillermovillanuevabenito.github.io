@@ -1,10 +1,10 @@
 ---
-layout: post
 title: "Artificial Neural Network for diabetes prediction"
-author: "Guillermo Villanueva"
-categories: journal
-tags: [documentation,sample]
-image: diabetes.jpeg
+header:
+  teaser: /assets/img/diabetes.jpeg
+  overlay_image: /assets/img/diabetes.jpeg
+  overlay_filter: 0.5
+  show_overlay_excerpt: false
 tags:
 - Artificial Neural Network
 - Python
@@ -14,9 +14,8 @@ tags:
 Diabetes is a chronic health condition that affects a huge number of the population throughout the world.
 
 
-<div class="highlight-note"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
-<div class="highlights-note"> 
-<p>Diabetes is a health disorder that results in an increase in blood glucose level.</p>
+<div class="notice--info" markdown="1">
+**Note:** Diabetes is a health disorder that results in an increase in blood glucose level.
 </div>
 
 In this project, we will implement an Artificial Neural Network (ANN) for diabetes predictions in order to predict the onset of diabetes based on a set of diagnostic measures.
@@ -24,9 +23,8 @@ In this project, we will implement an Artificial Neural Network (ANN) for diabet
 ## Model
 Among the different machine learning (ML) models used for diabetes prediction such as support vector machines (SVM), decision trees (DT) or random forest (RF), we will focus on artificial neural networks (ANN). 
 
-<div class="highlight-note"><i class="fa fa-info-circle" aria-hidden="true"></i><span>Note</span></div>
-<div class="highlights-note"> 
-<p>An artificial neural network is a model inspired by the structure of neural networks in the brain.</p>
+<div class="notice--info" markdown="1">
+**Note:** An artificial neural network is a model inspired by the structure of neural networks in the brain.
 </div>
 
 ANN consist of a large number of basic units called neurons that are connected to each other. A neural network can be described as a directed graph whose nodes correspond to neurons and edges to links between them. Each neuron receives as inputs a weighted sum of the outputs of the neurons connected to its incomming edges. ANN uses an activation functions to transform the sum of weighted inputs given at a node into activation of that node.
@@ -34,7 +32,7 @@ ANN consist of a large number of basic units called neurons that are connected t
 
 ## Data
 
-We will use the publicly available <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">Pima Indians Diabetes dataset</a>. It describes patient medical record data for 768 women patients and whether they had an onset of diabetes within five years. It is binary classification problem and all the input variables that describe each patient are numerical. The variables can be summarized as follows:
+We will use the publicly available <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database">Pima Indians Diabetes dataset</a>. It describes patient medical record data for 768 women patients and whether they had an onset of diabetes within five years. It is binary classification problem and all the input variables that describe each patient are numerical. The variables can be summarized as follows:
 
 1. _Pregnant_: number of times pregnant.
 2. _Glucose_: plasma glucose concentration a two hours in an oral glucose tolerance test.
@@ -54,7 +52,7 @@ The following network architecture will be implemented:
 3. Layer dense with 10 nodes.
 4. Output layer.
 
-In order to implement it, we will use the python API <a href="https://keras.io/" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">Keras</a>, built on top of TensorFlow. The source code can be found in <a href="https://github.com/guillermovillanuevabenito/ANN_diabetes" style="color: rgb(165, 15, 15);text-decoration:none; :hover { color: black;};">GitHub-ANN-diabetes</a>.
+In order to implement it, we will use the python API <a href="https://keras.io/">Keras</a>, built on top of TensorFlow. The source code can be found in <a href="https://github.com/guillermovillanuevabenito/ANN_diabetes">GitHub-ANN-diabetes</a>.
 
 ## Data Pre-Processing
 We firtly removed instances with missing values. They correspond to patients with glucose, blood pressure, skin thickness, insulin or BMI set to zero.

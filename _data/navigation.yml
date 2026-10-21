@@ -1,0 +1,11 @@
+main:
+  - title: "About"
+    url: /
+  - title: "Projects"
+    url: /projects/
+  - title: "Experience"
+    url: /experience/
+  - title: "Tags"
+    url: /tags/
+  - title: "CV"
+    url: /assets/CV_guillermo_villanueva.pdf
