@@ -1,17 +1,16 @@
-# Theme: Minimal Mistakes (https://mmistakes.github.io/minimal-mistakes/)
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+# Theme: Minimal Mistakes 4.26.2 (https://mmistakes.github.io/minimal-mistakes/), copied into this repo
 minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site settings
 locale: "en-US"
 title: "Guillermo Villanueva Benito"
 name: "Guillermo Villanueva Benito"
-description: "Personal website of Guillermo Villanueva Benito: projects, CV and contact details."
+description: "Personal website of Guillermo Villanueva Benito: publications, teaching and CV."
 url: "https://guillermovillanuevabenito.com"
 baseurl: ""
 repository: "guillermovillanuevabenito/guillermovillanuevabenito.github.io"
 og_image: "/assets/img/me.png"
-search: true
+search: false
 
 # Site author
 author:
@@ -29,9 +28,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/guillermo-villanueva-130691234/"
-    - label: "CV (PDF)"
-      icon: "fas fa-fw fa-file-pdf"
-      url: "/assets/CV_guillermo_villanueva.pdf"
 
 footer:
   links:
@@ -61,36 +57,16 @@ kramdown:
   syntax_highlighter: rouge
 
 # Outputting
-permalink: /:title  # keeps the old post URLs (e.g. /TSP)
 timezone: Europe/Madrid
 
 plugins:
-  - jekyll-remote-theme
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
 
-# Archives
-tag_archive:
-  type: liquid
-  path: /tags/
-
 # Defaults
 defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
-      toc: true
-      toc_sticky: true
   - scope:
       path: "_pages"
       type: pages
