@@ -8,10 +8,6 @@
 @import "minimal-mistakes";
 
 /* Site tweaks */
-html {
-  font-size: 16px; // keep the theme's base size on large screens too (theme scales up to 22px)
-}
-
 .author__avatar img {
   max-width: 250px; // theme default: 175px
 }
