@@ -73,3 +73,4 @@ defaults:
     values:
       layout: single
       author_profile: true
+      classes: wide # use the full width (no empty right column reserved for a TOC)
