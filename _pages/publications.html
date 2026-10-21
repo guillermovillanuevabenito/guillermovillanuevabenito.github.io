@@ -6,20 +6,20 @@ author_profile: true
 ---
 
 {% comment %}
-  One entry per file in _publications/ (front matter: title, category, date, authors, paperurl).
-  Sections follow the order of publication_category in _config.yml; the title links to paperurl.
+  One entry per file in _publications/ (front matter: title, category, date, authors, venue, paperurl).
+  Sections follow publication_category in _config.yml. The title links to paperurl, my name is bold,
+  and the line ends with the venue, or the month and year when there is none (preprints).
 {% endcomment %}
 
+{% capture me %}<strong>{{ site.author.name }}</strong>{% endcapture %}
 {% for category in site.publication_category %}
   {% assign pubs = site.publications | where: "category", category[0] | sort: "date" | reverse %}
   {% if pubs.size > 0 %}
-<h2>{{ category[1].title }}</h2>
-<ul class="publication-list">
+<h2 id="{{ category[0] }}">{{ category[1].title }}</h2>
+<ul>
     {% for pub in pubs %}
-  <li>
-    <p class="publication-title">{% if pub.paperurl %}<a href="{{ pub.paperurl }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</p>
-    <p class="publication-meta">{{ pub.authors }}. {{ pub.date | date: "%b. %Y" }}</p>
-  </li>
+  <li>{% if pub.paperurl %}<a href="{{ pub.paperurl }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}<br>
+    {{ pub.authors | replace: site.author.name, me }}. {% if pub.venue %}{{ pub.venue }}{% else %}{{ pub.date | date: "%b. %Y" }}{% endif %}</li>
     {% endfor %}
 </ul>
   {% endif %}

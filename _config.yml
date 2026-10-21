@@ -86,12 +86,8 @@ author:
 publication_category:
   preprints:
     title: 'Preprints'
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
+  publications:
+    title: 'Publications'
   theses:
     title: 'Theses'
 
