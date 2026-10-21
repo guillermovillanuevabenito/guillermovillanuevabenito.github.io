@@ -17,7 +17,7 @@ author_profile: true
 - **Women in Data Science (WiDS) Barcelona 2023**, Barcelona, Spain. Oct. 2023. Poster presentation.<br>
   *[Machine learning for anxiety and depression profiling in the aftermath of an emergency](https://sites.google.com/isglobal.org/women-in-data-science/english)*
 
-## Contributed presentations
+## Contributions
 
 <!-- Work I co-authored, presented by a colleague, newest first. Example:
 - **Conference Name**, City, Country. Mon. 2026. Oral presentation.<br>
