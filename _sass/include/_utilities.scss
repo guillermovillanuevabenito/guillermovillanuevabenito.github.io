@@ -193,13 +193,14 @@ body:hover .visually-hidden button {
   margin-right: 0.5em;
 }
 
-/* inline SVG icons (e.g. Hugging Face, not in Font Awesome): same footprint as a .fa-fw.icon-pad-right icon */
+/* inline SVG icons (e.g. Hugging Face, not in Font Awesome): glyph at the left edge like
+   Font Awesome's, same footprint as a .fa-fw.icon-pad-right icon (1.25em + 0.5em) */
 .icon-svg {
   display: inline-block;
-  width: 1.25em;
+  width: 1em;
   height: 1em;
-  margin-right: 0.5em;
-  vertical-align: -0.125em;
+  margin-right: 0.75em;
+  vertical-align: -0.19em;
   fill: currentColor;
 }
 
