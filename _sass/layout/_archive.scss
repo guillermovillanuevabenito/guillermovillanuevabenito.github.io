@@ -243,3 +243,30 @@
     }
   }
 }
+
+/*
+   Publications list (_pages/publications.html)
+   ========================================================================== */
+
+.publication-list {
+  margin: 0 0 2em;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 1.25em;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .publication-title {
+    font-weight: bold;
+  }
+
+  .publication-meta {
+    font-size: $type-size-6;
+    color: var(--global-text-color-light);
+  }
+}

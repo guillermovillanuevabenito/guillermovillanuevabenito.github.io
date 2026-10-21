@@ -1,13 +1,7 @@
 ---
 title: "CineScribe: LLM-based detection and mitigation of ambiguity in cine cardiac magnetic resonance reports"
-collection: publications
 category: manuscripts
-permalink: /publication/2026-08-15-cinescribe
-excerpt: "A lightweight LLM that turns free-text cine CMR reports into structured regional wall-motion abnormality data, and uses its own confidence to flag ambiguous reports."
 date: 2026-08-15
-venue: "Computers in Biology and Medicine"
+authors: "Guillermo Villanueva Benito, Martin L. Descalzo, Sandra Pujadas, Juan Fernandez, Matias Calandrelli, Paula Petrone"
 paperurl: "https://doi.org/10.1016/j.compbiomed.2026.111806"
-citation: "Villanueva Benito, G., Descalzo, M. L., Pujadas, S., Fernandez, J., Calandrelli, M., &amp; Petrone, P. (2026). &quot;CineScribe: LLM-based detection and mitigation of ambiguity in cine cardiac magnetic resonance reports.&quot; <i>Computers in Biology and Medicine</i>, 213, 111806."
 ---
-
-Cine Cardiac Magnetic Resonance (cineCMR) is widely regarded as a reference standard for evaluating left-ventricular wall motion, yet interpretation remains variable and free-text reports frequently contain imprecise language that can lead to miscommunication. In this study, we present CineScribe, a novel lightweight large language model (LLM) trained on expert-annotated cineCMR reports to convert free-text clinical reports into structured regional wall-motion abnormality (RWMA) representations and support standardized report generation from validated diagnostic findings. CineScribe achieves high performance on the report-structuring task with a macro-F1 of 0.92 (95% CI, 0.89-0.94), enabling automated extraction of RWMAs from routine clinical documentation. Beyond structuration, we introduce a Report-Level Confidence (RLC) score, derived from token-level conditional probabilities of the model, to quantify uncertainty during structured information extraction. Using an enriched multi-expert annotated dataset, we show that reduced model confidence is strongly associated with report ambiguity, which in turn corresponds to diagnostically complex cineCMR cases characterized by increased inter-observer variability during expert video review. CineScribe detected ambiguous reports with good discrimination with a ROC-AUC of 0.76 (95% CI, 0.68-0.85). Human evaluation using the QUEST framework demonstrated that reports generated from expert-validated findings were clinically appropriate, with 78% (95% CI, 74%-83%) rated as both correct and complete. Together, these results show that model confidence during clinical information extraction can serve as a practical indicator of ambiguity in medical reporting, enabling targeted expert review of diagnostically complex cases and supporting more consistent and efficient cineCMR documentation.

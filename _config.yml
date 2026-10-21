@@ -84,6 +84,8 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
+  preprints:
+    title: 'Preprints'
   books:
     title: 'Books'
   manuscripts:
@@ -230,8 +232,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   publications:
-    output: true
-    permalink: /:collection/:path/
+    output: false # listed on /publications/ only, no page per entry
   portfolio:
     output: true
     permalink: /:collection/:path/
