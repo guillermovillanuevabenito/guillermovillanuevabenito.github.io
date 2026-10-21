@@ -5,9 +5,9 @@ permalink: /teaching/
 author_profile: true
 ---
 
+<!-- Teaching: hidden until there is a course to list. To show it, put this back above "## Mentoring":
 ## Teaching
 
-<!-- One line per course, newest first. Example:
 - [Course name](https://link-to-course) (University, Fall 2026)
 -->
 
