@@ -14,3 +14,5 @@ I hold a double degree in Mathematics and Engineering Physics from the Interdisc
 My research interests lie at the intersection of artificial intelligence, medical imaging, and healthcare, with a particular emphasis on translating AI research into real-world clinical applications and impact.
 
 Check out my recent work, where we use a lightweight language model to turn free-text cine cardiac magnetic resonance reports into structured data and to detect and mitigate ambiguity in them: [CineScribe: LLM-based detection and mitigation of ambiguity in cine cardiac magnetic resonance reports](https://doi.org/10.1016/j.compbiomed.2026.111806) (*Computers in Biology and Medicine*, 2026).
+
+You can find my CV [here](/files/CV_guillermo_villanueva.pdf).
