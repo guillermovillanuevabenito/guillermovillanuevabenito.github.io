@@ -12,7 +12,7 @@ author_profile: true
   *[Talk title](https://link-to-abstract-or-session)*
 -->
 
-- **AIHealth 2026**, Valencia, Spain. Mar. 2026. Oral presentation, **Best Paper Award**.<br>
+- **AIHealth 2026**, Valencia, Spain. Mar. 2026. Oral presentation, <i class="fas fa-star award-icon" aria-hidden="true"></i> **Best Paper Award**.<br>
   *[CineScribe: LLM-Based Detection and Mitigation of Ambiguity in Cine Cardiac Magnetic Resonance Reports](https://www.thinkmind.org/library/AIHealth/AIHealth_2026/aihealth_2026_1_180_80154.html)*
 - **Women in Data Science (WiDS) Barcelona 2023**, Barcelona, Spain. Oct. 2023. Poster presentation.<br>
   *[Machine learning for anxiety and depression profiling in the aftermath of an emergency](https://sites.google.com/isglobal.org/women-in-data-science/english)*
