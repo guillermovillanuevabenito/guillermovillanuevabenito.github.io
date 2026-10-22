@@ -24,15 +24,15 @@ author_profile: true
 <!-- Work I co-authored, presented by a colleague, newest first. Example:
 - **Conference Name**, City, Country. Mon. 2026. Oral presentation.<br>
   *[Talk title](https://link-to-abstract-or-session)*<br>
-  Presenter Name (presenter), **Guillermo Villanueva Benito**.
+  Presented by Presenter Name (Affiliation).
 -->
 
 - **ESC Digital & AI Summit 2026**, Basel, Switzerland. Nov. 2026. Poster presentation.<br>
   *[Automated regional wall motion abnormality detection in cine cardiac MRI using LLM-assisted annotation and video deep learning](https://esc365.escardio.org/ESC-Digital-AI-Summit/sessions/22047)*<br>
-  Martin L. Descalzo (presenter), **Guillermo Villanueva Benito**.
+  Presented by Martin L. Descalzo (Hospital de la Santa Creu i Sant Pau, Barcelona).
 - **ESC Congress 2025**, Madrid, Spain. Aug. 2025. Oral presentation.<br>
   *[CineScribe: AI-driven standardization of cardiac motion reports in cine MRI](https://academic.oup.com/eurheartj/article/46/Supplement_1/ehaf784.009/8311015)*<br>
-  Matias Calandrelli (presenter), **Guillermo Villanueva Benito**.
+  Presented by Matias Calandrelli (Hospital de la Santa Creu i Sant Pau, Barcelona).
 
 ## Attendance
 
