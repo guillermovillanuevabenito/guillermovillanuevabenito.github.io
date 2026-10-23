@@ -17,6 +17,12 @@
   /* keep footer in normal document flow so custom widgets do not overlap content */
   height: auto;
 
+  /* sticky footer (template default, as in earlier AcademicPages): at the bottom of the window on
+     short pages, after the content on long ones. html is position: relative; min-height: 100%,
+     and assets/js/_main.js (bumpIt) gives body a bottom margin equal to the footer height. */
+  position: absolute;
+  bottom: 0;
+
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.45s;
@@ -50,14 +56,6 @@
   .far,
   .fal {
     color: var(--global-text-color-light);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  /* don't pin the footer on mobile devices */
-  .page__footer {
-    position: relative;
-    bottom: auto;
   }
 }
 
