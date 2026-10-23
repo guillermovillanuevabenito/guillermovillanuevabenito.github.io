@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am Guillermo Villanueva Benito, currently a PhD researcher in Artificial Intelligence for Healthcare at the Barcelona Supercomputing Center (BSC-CNS) and the Barcelona Institute for Global Health (ISGlobal). My research focuses on developing deep learning and vision-language models for medical imaging analysis, automated diagnosis, and clinical decision support.
+I am Guillermo Villanueva Benito, currently a PhD student in Artificial Intelligence for Healthcare at the Barcelona Supercomputing Center (BSC-CNS) and the Barcelona Institute for Global Health (ISGlobal). My research focuses on developing deep learning and vision-language models for medical imaging analysis, automated diagnosis, and clinical decision support.
 
 I hold a double degree in Mathematics and Engineering Physics from the Interdisciplinary Higher Education Center (CFIS) at the Universitat Politècnica de Catalunya (UPC).
 
